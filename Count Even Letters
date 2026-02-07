@@ -1,0 +1,23 @@
+import java.util.*;
+public class Solution {
+    public int count(String s) {
+        Map<Character,Integer> freq = new HashMap<>();
+        for(char ch : s.toCharArray()){
+            freq.put(ch,freq.getOrDefault(ch,0)+1);
+        }
+        int count=0;
+        for(Map.Entry<Character,Integer> entry : freq.entrySet()){
+            if(entry.getValue()%2==0){
+                count++;
+            }
+        }
+        return count;
+    }
+public static void main(String[] args) {
+        Solution sol = new Solution();
+        String s1 = "aabbccdde";
+        String s2 = "abc";
+        System.out.println(sol.count(s1)); 
+        System.out.println(sol.count(s2));
+    }
+}
