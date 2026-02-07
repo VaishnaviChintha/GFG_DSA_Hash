@@ -1,0 +1,21 @@
+import java.util.*;
+public class Solution {
+    public ArrayList<Integer> intersect(int[] a, int[] b) {
+        ArrayList<Integer> res = new ArrayList<>();
+        Set<Integer> set = new HashSet<>();
+        for(int n : b) set.add(n);
+        for(int n: a){
+            if(set.contains(n) && !res.contains(n)){
+                res.add(n);
+            }
+        }
+        return res;
+    }
+public static void main(String[] args) {
+        Solution sol = new Solution();
+        int[] a = {1, 2, 2, 3, 4};
+        int[] b = {2, 3, 5};
+        ArrayList<Integer> result = sol.intersect(a, b);
+        System.out.println(result); 
+    }
+}
