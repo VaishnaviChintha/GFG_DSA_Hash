@@ -1,0 +1,30 @@
+import java.util.*;
+class Solution {
+    public static ArrayList<Integer> findUnion(int[] a, int[] b) {
+        // code here
+        HashSet<Integer> set = new HashSet<>();
+        ArrayList<Integer> res = new ArrayList<>();
+        for(int num: a){
+            if(!set.contains(num)){
+                set.add(num);
+                res.add(num);
+            }
+        }
+        for(int num: b){
+            if(!set.contains(num)){
+                set.add(num);
+                res.add(num);
+            }
+        }
+        return res;
+    }
+ public static void main(String[] args) {
+        int[] a = {1, 2, 3, 4, 5};
+        int[] b = {1, 2, 3, 6, 7};
+        ArrayList<Integer> result = findUnion(a, b);
+        System.out.println("Union of arrays:");
+        for(int num : result){
+            System.out.print(num + " ");
+        }
+    }
+}
